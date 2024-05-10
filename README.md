@@ -70,7 +70,7 @@ WHERE f.country_name='World' AND f.year in (1990,2016);
 The script below, finds the percent of the total forest area of each region in 2016.
 ```sql
 SELECT f.region, 
-ROUND(((SUM(f.forest_area_sqkm) * 100)/SUM(f.total_area_sqkm))::numeric,2) forest_percent_2016
+	   ROUND(((SUM(f.forest_area_sqkm) * 100)/SUM(f.total_area_sqkm))::numeric,2) forest_percent_2016
 FROM forestation f
 WHERE f.year=2016 AND f.region != 'World'
 GROUP BY f.region
@@ -81,7 +81,7 @@ This finds the percent of the total forest area of each region in 1990.
 
 ```sql
 SELECT f.region, 
-ROUND(((SUM(f.forest_area_sqkm) * 100)/SUM(f.total_area_sqkm))::numeric,2) forest_percent_1990
+	   ROUND(((SUM(f.forest_area_sqkm) * 100)/SUM(f.total_area_sqkm))::numeric,2) forest_percent_1990
 FROM forestation f
 WHERE f.year=1990 AND f.region != 'World'
 GROUP BY f.region
@@ -93,7 +93,7 @@ ORDER BY 1;
 This finds top 2 countries with maximum amount increase in forest area between 1990 and 2016.
 ```sql
 SELECT  y1990.country_name, 
-		ROUND((y2016.forest_area_sqkm -y1990.forest_area_sqkm)::NUMERIC)  increased_amount
+		ROUND((y2016.forest_area_sqkm -y1990.forest_area_sqkm)::NUMERIC) increased_amount
 FROM forestation y1990
 JOIN forestation y2016 ON y1990.country_code = y2016.country_code 
 WHERE y1990.year = 1990 
