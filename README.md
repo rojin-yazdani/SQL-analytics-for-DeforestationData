@@ -1,4 +1,4 @@
-# Analysis of Movie Rentals Database 
+# Analysis of Deforestation Data
 
 ## Introduction
 I've finished the  [Nonodegree Program: SQL](https://learn.udacity.com/nanodegrees/nd072) at [Udacity](https://www.udacity.com) and this project was a part of my program study.
